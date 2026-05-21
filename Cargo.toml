@@ -1,11 +1,21 @@
 [package]
-name = "sdr-capture"
+name = "sdr-ble-capture"
 version = "0.1.0"
 edition = "2024"
 
+[profile.dev]
+opt-level = 2
+
 [dependencies]
-desperado = { git="https://github.com/elenaf9/desperado", rev = "e5e5bac", features = ["soapy"] }
+desperado = { git="https://github.com/elenaf9/desperado", rev = "43cb628", features = ["soapy"] }
+env_logger = "0.11.10"
 futures = "0.3"
+log = "0.4.29"
 num-complex = "0.4"
 rustfft = "6.4"
 tokio = { version = "1.52", features = ["macros"]}
+
+[features]
+save-capture = []
+post-process = []
+
